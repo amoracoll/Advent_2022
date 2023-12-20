@@ -18,8 +18,27 @@ distributeGifts(packOfGifts, reindeers) // 2
 */
 
 function distributedGifts(packOfGifts,reindeers){
-    
+    //Obtenemos el peso de los regalos
+    let giftsWeights = 0;
+    for (let i = 0; i < packOfGifts.length; i++){
+        giftsWeights += packOfGifts[i].length;
+    }
+    //Obtenemos el peso que pueden soportar los renos
+    let reindeersWeights = 0;
+    for (let x = 0; x < reindeers.length; x++){
+        reindeersWeights += reindeers[x].length;
+    }
+    reindeersWeights = reindeersWeights * reindeers.length;
 
-
-    return
+    //Comprobamos si los renos pueden soportar el peso de los regalos
+    if (giftsWeights <= reindeersWeights){
+        return Math.floor(reindeersWeights / giftsWeights);
+    }
+    else{
+        return 0;
+    }
 }
+
+const packOfGifts = ["book", "doll", "ball"]
+const reindeers = ["dasher", "dancer"]
+console.log(distributedGifts(packOfGifts,reindeers));
