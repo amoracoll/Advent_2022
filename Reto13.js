@@ -15,11 +15,11 @@ const changes = [
 */
 
 //TODO: funcion inacabada
-function getFilesToBackup(lastBackup,changes){
-    for (let i = 0; i < changes.length; i++){
-        for (let x = 0; x < changes.length; x++){
-            if (changes[x][0])
-        }
-    }
-    return
-}
+// function getFilesToBackup(lastBackup,changes){
+//     for (let i = 0; i < changes.length; i++){
+//         for (let x = 0; x < changes.length; x++){
+//             if (changes[x][0])
+//         }
+//     }
+//     return
+// }

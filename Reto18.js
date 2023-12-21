@@ -16,19 +16,14 @@
 // // 1, 10, 11, 12, 13, 14, 15
 
 function dryNumber(dry, numbers){
-    let listaNumbers = [];
+    //Creacion lista de retorno
     let listaRetorno = [];
 
-    for (let i = 1; i <= numbers; i++){
-        listaNumbers.push(i);
-    }
-
-    for (let i = 0; i < listaNumbers.length; i++){
-        for (let x = 0; x < listaNumbers[i].length; x++){
-            if (dry === listaNumbers[i][x]){
-                listaRetorno.push(listaNumbers[i]);       
-                break;
-            }
+    //Bucle para pasar por todas las variables
+    for (let i = 0; i < numbers; i++){
+        //Pasamos las variables a string y comprobamos si estan incluidas
+        if (i.toString().includes(dry.toString())){
+            listaRetorno.push(i);
         }
     }
     return "Las variables que no se pueden imprimir son: " + listaRetorno;
