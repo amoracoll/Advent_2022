@@ -20,21 +20,27 @@ function sortToys(toys, position){
         return "El tamaño de las dos listas no es el mismo";
     }    
 
-    //Creación variables inicio y lista de retorno vacia
-    let minimo = position[0];
+    //Creación lista vacia
     let listaPosiciones = [];
-    let juguete = "";
 
     //Inicializa para comprobar todos los valores
     for (let x = 0; x < position.length; x++){
+        //Inicializamos con un valor grande
+        let minimo = Infinity;
+        let jueguete = "";
+
+        //Inicializamos bucle para comprobar todas las posiciones
         for (let i = 0; i < position.length; i++){
-            if (position[i] < minimo){
+            //Condicional para comprobar si el valor es menor y esta incluido en la lista
+            if (position[i] < minimo && !listaPosiciones.includes(toys[i])){
                 minimo = position[i];
-                juguete = toys[i];
+                jueguete = toys[i];
             }
         }
-        listaPosiciones.push(juguete);
+        //Añadimos el valor a la lista de retorno
+        listaPosiciones.push(jueguete);
     }
+    //Retorno de la funcion
     return "Las posiciones son la siguientes: " + listaPosiciones;
 }
 
